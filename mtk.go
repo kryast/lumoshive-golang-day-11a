@@ -1,4 +1,4 @@
-package mtk
+package MTK
 
 import "fmt"
 
