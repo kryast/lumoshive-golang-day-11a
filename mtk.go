@@ -1,5 +1,7 @@
 package MTK
 
+import "fmt"
+
 // func Tambah(a int, b int) int {
 // 	return a + b
 // }
@@ -26,9 +28,11 @@ type Data struct {
 var DataAkun []Data
 
 func GetId(length int, ch chan<- []Data) {
-	for i := 0; i < length; i++ {
+
+	for i := 1; i <= length; i++ {
 		DataAkun = append(DataAkun, Data{Id: i})
+		ch <- DataAkun
+		fmt.Println("berhasil menambahkan kan data ke ", i)
 	}
-	ch <- DataAkun
 
 }
